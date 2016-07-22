@@ -162,7 +162,9 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
@@ -264,5 +266,12 @@
   </Target>
   <Target Name="AfterBuild">
   </Target>
+  <Target Name="CopyRoslynFiles" AfterTargets="AfterBuild" >
+  <ItemGroup>
+    <RoslynFiles Include="$(SolutionDir)packages\Microsoft.Net.Compilers.1.1.1\tools\*" />
+  </ItemGroup>
+  <MakeDir Directories="$(WebProjectOutputDir)\bin\roslyn" />
+  <Copy SourceFiles="@(RoslynFiles)" DestinationFolder="$(WebProjectOutputDir)\bin\roslyn" SkipUnchangedFiles="true" Retries="$(CopyRetryCount)" RetryDelayMilliseconds="$(CopyRetryDelayMilliseconds)" />
+</Target>
   -->
 </Project>
