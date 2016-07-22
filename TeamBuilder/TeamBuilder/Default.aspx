@@ -9,27 +9,38 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
-                        <th>Email</th>
+                        <th></th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>DOB</th>
+                        <th>Age</th>
+                        <th>Age at Season</th>
+                        <th>Gender</th>
+                        <th>Notes</th>
+                        <th>Seasons Played</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td>john@example.com</td>
-                    </tr>
-                    <tr>
-                        <td>Mary</td>
-                        <td>Moe</td>
-                        <td>mary@example.com</td>
-                    </tr>
-                    <tr>
-                        <td>July</td>
-                        <td>Dooley</td>
-                        <td>july@example.com</td>
-                    </tr>
+                    <asp:Repeater ID="rptPlayer" runat="server" OnItemDataBound="rptPlayer_ItemDataBound">
+                        <ItemTemplate>
+                            <tr>
+                                
+                                <td><asp:HiddenField runat="server" ID="hdnID"  Value='<%# Eval("ID") %>' /> </td>
+                                <td><%# Eval("FNAME") %></td>
+                                <td><%# Eval("LNAME") %></td>
+                                <td><%# DataBinder.Eval(Container.DataItem, "DOB", "{0:M/d/yy}") %></td>
+                                <td><%# DataBinder.Eval(Container.DataItem, "DOB", "{0:M/d/yy}") %></td>
+                                <td><%# DataBinder.Eval(Container.DataItem, "DOB", "{0:M/d/yy}") %></td>
+                                <td><%# (bool.Parse(Eval("GENDER").ToString()) == true) ? "M" : "F" %></td>
+                                <td><%# Eval("ROSTERNOTE") + " " + Eval("PLAYERNOTE") %></td>
+                                <td><%# Eval("SEASONSPLAYED") %></td>
+                                <td>
+                                    <asp:DropDownList runat="server" ID="ddlteam" AppendDataBoundItems="true" AutoPostBack="true" OnSelectedIndexChanged="ddlteam_SelectedIndexChanged">
+                                        <asp:ListItem Text="Select a Team" Value="0"></asp:ListItem>
+                                    </asp:DropDownList></td>
+                            </tr>
+                        </ItemTemplate>
+                    </asp:Repeater>
                 </tbody>
             </table>
         </div>

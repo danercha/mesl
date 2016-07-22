@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db5448bbf8bffc436783e8a649012e22ecModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="COACH">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FNAME" Type="nchar" MaxLength="25" />
+    <Property Name="LNAME" Type="nchar" MaxLength="25" />
+    <Property Name="TEAMID" Type="int" />
+  </EntityType>
+  <EntityType Name="PLAYER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FNAME" Type="nchar" MaxLength="25" />
+    <Property Name="LNAME" Type="nchar" MaxLength="25" Nullable="false" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="GENDER" Type="bit" />
+    <Property Name="ROSTERNOTE" Type="nchar" MaxLength="250" />
+    <Property Name="PLAYERNOTE" Type="nchar" MaxLength="250" />
+    <Property Name="SEASONSPLAYED" Type="nchar" MaxLength="10" />
+    <Property Name="TEAMID" Type="int" />
+  </EntityType>
+  <EntityType Name="TEAM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nchar" MaxLength="25" />
+  </EntityType>
+  <Association Name="FK_COACH_TEAM">
+    <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />
+    <End Role="COACH" Type="Self.COACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEAM">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="COACH">
+        <PropertyRef Name="TEAMID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PLAYER_TEAM">
+    <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />
+    <End Role="PLAYER" Type="Self.PLAYER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEAM">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PLAYER">
+        <PropertyRef Name="TEAMID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="db5448bbf8bffc436783e8a649012e22ecModelStoreContainer">
+    <EntitySet Name="COACH" EntityType="Self.COACH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PLAYER" EntityType="Self.PLAYER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TEAM" EntityType="Self.TEAM" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_COACH_TEAM" Association="Self.FK_COACH_TEAM">
+      <End Role="TEAM" EntitySet="TEAM" />
+      <End Role="COACH" EntitySet="COACH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PLAYER_TEAM" Association="Self.FK_PLAYER_TEAM">
+      <End Role="TEAM" EntitySet="TEAM" />
+      <End Role="PLAYER" EntitySet="PLAYER" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

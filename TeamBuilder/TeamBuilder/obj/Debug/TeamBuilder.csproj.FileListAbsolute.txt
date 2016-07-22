@@ -47,3 +47,7 @@ C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\Microsoft.AspNet.F
 C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\obj\Debug\TeamBuilder.dll
 C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\obj\Debug\TeamBuilder.pdb
 C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\obj\Debug\TeamBuilder.csprojResolveAssemblyReference.cache
+C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\EntityFramework.dll
+C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\EntityFramework.SqlServer.dll
+C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\EntityFramework.xml
+C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\EntityFramework.SqlServer.xml

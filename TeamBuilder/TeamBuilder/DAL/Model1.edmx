@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="db5448bbf8bffc436783e8a649012e22ecModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="COACH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FNAME" Type="nchar" MaxLength="25" />
+          <Property Name="LNAME" Type="nchar" MaxLength="25" />
+          <Property Name="TEAMID" Type="int" />
+        </EntityType>
+        <EntityType Name="PLAYER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FNAME" Type="nchar" MaxLength="25" />
+          <Property Name="LNAME" Type="nchar" MaxLength="25" Nullable="false" />
+          <Property Name="DOB" Type="date" />
+          <Property Name="GENDER" Type="bit" />
+          <Property Name="ROSTERNOTE" Type="nchar" MaxLength="250" />
+          <Property Name="PLAYERNOTE" Type="nchar" MaxLength="250" />
+          <Property Name="SEASONSPLAYED" Type="nchar" MaxLength="10" />
+          <Property Name="TEAMID" Type="int" />
+        </EntityType>
+        <EntityType Name="TEAM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nchar" MaxLength="25" />
+        </EntityType>
+        <Association Name="FK_COACH_TEAM">
+          <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />
+          <End Role="COACH" Type="Self.COACH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEAM">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="COACH">
+              <PropertyRef Name="TEAMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PLAYER_TEAM">
+          <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />
+          <End Role="PLAYER" Type="Self.PLAYER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEAM">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PLAYER">
+              <PropertyRef Name="TEAMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db5448bbf8bffc436783e8a649012e22ecModelStoreContainer">
+          <EntitySet Name="COACH" EntityType="Self.COACH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PLAYER" EntityType="Self.PLAYER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TEAM" EntityType="Self.TEAM" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_COACH_TEAM" Association="Self.FK_COACH_TEAM">
+            <End Role="TEAM" EntitySet="TEAM" />
+            <End Role="COACH" EntitySet="COACH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PLAYER_TEAM" Association="Self.FK_PLAYER_TEAM">
+            <End Role="TEAM" EntitySet="TEAM" />
+            <End Role="PLAYER" EntitySet="PLAYER" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db5448bbf8bffc436783e8a649012e22ecModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="COACH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FNAME" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+          <Property Name="LNAME" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+          <Property Name="TEAMID" Type="Int32" />
+          <NavigationProperty Name="TEAM" Relationship="Self.FK_COACH_TEAM" FromRole="COACH" ToRole="TEAM" />
+        </EntityType>
+        <EntityType Name="PLAYER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FNAME" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+          <Property Name="LNAME" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Precision="0" />
+          <Property Name="GENDER" Type="Boolean" />
+          <Property Name="ROSTERNOTE" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+          <Property Name="PLAYERNOTE" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+          <Property Name="SEASONSPLAYED" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TEAMID" Type="Int32" />
+          <NavigationProperty Name="TEAM" Relationship="Self.FK_PLAYER_TEAM" FromRole="PLAYER" ToRole="TEAM" />
+        </EntityType>
+        <EntityType Name="TEAM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="COACHes" Relationship="Self.FK_COACH_TEAM" FromRole="TEAM" ToRole="COACH" />
+          <NavigationProperty Name="PLAYERs" Relationship="Self.FK_PLAYER_TEAM" FromRole="TEAM" ToRole="PLAYER" />
+        </EntityType>
+        <Association Name="FK_COACH_TEAM">
+          <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />
+          <End Role="COACH" Type="Self.COACH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEAM">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="COACH">
+              <PropertyRef Name="TEAMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PLAYER_TEAM">
+          <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />
+          <End Role="PLAYER" Type="Self.PLAYER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEAM">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PLAYER">
+              <PropertyRef Name="TEAMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MESLEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="COACHes" EntityType="Self.COACH" />
+          <EntitySet Name="PLAYERs" EntityType="Self.PLAYER" />
+          <EntitySet Name="TEAMs" EntityType="Self.TEAM" />
+          <AssociationSet Name="FK_COACH_TEAM" Association="Self.FK_COACH_TEAM">
+            <End Role="TEAM" EntitySet="TEAMs" />
+            <End Role="COACH" EntitySet="COACHes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PLAYER_TEAM" Association="Self.FK_PLAYER_TEAM">
+            <End Role="TEAM" EntitySet="TEAMs" />
+            <End Role="PLAYER" EntitySet="PLAYERs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db5448bbf8bffc436783e8a649012e22ecModelStoreContainer" CdmEntityContainer="MESLEntities">
+          <EntitySetMapping Name="COACHes">
+            <EntityTypeMapping TypeName="db5448bbf8bffc436783e8a649012e22ecModel.COACH">
+              <MappingFragment StoreEntitySet="COACH">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FNAME" ColumnName="FNAME" />
+                <ScalarProperty Name="LNAME" ColumnName="LNAME" />
+                <ScalarProperty Name="TEAMID" ColumnName="TEAMID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PLAYERs">
+            <EntityTypeMapping TypeName="db5448bbf8bffc436783e8a649012e22ecModel.PLAYER">
+              <MappingFragment StoreEntitySet="PLAYER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FNAME" ColumnName="FNAME" />
+                <ScalarProperty Name="LNAME" ColumnName="LNAME" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="ROSTERNOTE" ColumnName="ROSTERNOTE" />
+                <ScalarProperty Name="PLAYERNOTE" ColumnName="PLAYERNOTE" />
+                <ScalarProperty Name="SEASONSPLAYED" ColumnName="SEASONSPLAYED" />
+                <ScalarProperty Name="TEAMID" ColumnName="TEAMID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TEAMs">
+            <EntityTypeMapping TypeName="db5448bbf8bffc436783e8a649012e22ecModel.TEAM">
+              <MappingFragment StoreEntitySet="TEAM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -46,3 +46,8 @@ C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\System.Web.Optimiz
 C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\obj\Release\TeamBuilder.dll
 C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\obj\Release\TeamBuilder.pdb
+C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\EntityFramework.dll
+C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\EntityFramework.SqlServer.dll
+C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\EntityFramework.xml
+C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\EntityFramework.SqlServer.xml
+C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\obj\Release\TeamBuilder.csprojResolveAssemblyReference.cache
