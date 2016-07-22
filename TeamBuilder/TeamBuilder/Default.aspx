@@ -28,11 +28,11 @@
                                 <td><asp:HiddenField runat="server" ID="hdnID"  Value='<%# Eval("ID") %>' /> </td>
                                 <td><%# Eval("FNAME") %></td>
                                 <td><%# Eval("LNAME") %></td>
-                                <td><%# DataBinder.Eval(Container.DataItem, "DOB", "{0:M/d/yy}") %></td>
-                                <td><%# DataBinder.Eval(Container.DataItem, "DOB", "{0:M/d/yy}") %></td>
-                                <td><%# DataBinder.Eval(Container.DataItem, "DOB", "{0:M/d/yy}") %></td>
+                                <td><%# DataBinder.Eval(Container.DataItem, "DOB", "{0:MM/dd/yyyy}") %></td>
+                                <td><%# Eval("AGE","{0:F2}") %></td>
+                                <td><%# Eval("AGESTART","{0:F2}") %></td>
                                 <td><%# (bool.Parse(Eval("GENDER").ToString()) == true) ? "M" : "F" %></td>
-                                <td><%# Eval("ROSTERNOTE") + " " + Eval("PLAYERNOTE") %></td>
+                                <td><%# Eval("NOTES")%></td>
                                 <td><%# Eval("SEASONSPLAYED") %></td>
                                 <td>
                                     <asp:DropDownList runat="server" ID="ddlteam" AppendDataBoundItems="true" AutoPostBack="true" OnSelectedIndexChanged="ddlteam_SelectedIndexChanged">
