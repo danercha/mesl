@@ -46,3 +46,4 @@ C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\System.Web.Optimiz
 C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\obj\Debug\TeamBuilder.dll
 C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\obj\Debug\TeamBuilder.pdb
+C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\obj\Debug\TeamBuilder.csprojResolveAssemblyReference.cache
