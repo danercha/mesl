@@ -44,6 +44,5 @@ C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\Microsoft.CodeDom.
 C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\Newtonsoft.Json.xml
 C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\System.Web.Optimization.xml
 C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\Microsoft.AspNet.FriendlyUrls.xml
-C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\obj\Debug\TeamBuilder.csprojResolveAssemblyReference.cache
 C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\obj\Debug\TeamBuilder.dll
 C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\obj\Debug\TeamBuilder.pdb
