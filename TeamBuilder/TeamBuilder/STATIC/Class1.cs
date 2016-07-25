@@ -22,4 +22,18 @@ namespace TeamBuilder.STATIC
         public int SEASONSPLAYED { get; set; }
         public int TEAMID { get; set; }
     }
+    public class Local_Team
+    {
+        public int ID { get; set; }
+        public string NAME { get; set; }
+        public string COACH { get; set; }
+        public string PLAYER1 { get; set; }
+        public string PLAYER2 { get; set; }
+        public string PLAYER3 { get; set; }
+        public string PLAYER4 { get; set; }
+        public string PLAYER5 { get; set; }
+        public string PLAYER6 { get; set; }
+        public double AGE { get; set; }
+        public double GENDER { get; set; }
+    }
 }

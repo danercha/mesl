@@ -29,6 +29,12 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NAME" Type="nchar" MaxLength="25" />
+    <Property Name="PLAYER1" Type="int" />
+    <Property Name="PLAYER2" Type="int" />
+    <Property Name="PLAYER3" Type="int" />
+    <Property Name="PLAYER4" Type="int" />
+    <Property Name="PLAYER5" Type="int" />
+    <Property Name="PLAYER6" Type="int" />
   </EntityType>
   <Association Name="FK_COACH_TEAM">
     <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />

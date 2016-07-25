@@ -13,7 +13,7 @@ namespace TeamBuilder
 {
     public partial class _Default : Page
     {
-        public List<TEAM> _teams = new List<TEAM>();
+        public List<Local_Team> _teams = new List<Local_Team>();
         public List<Local_player> _players = new List<Local_player>();
         public List<COACH> _coaches = new List<COACH>();
 
@@ -24,7 +24,6 @@ namespace TeamBuilder
                 using (MESLEntities txt = new MESLEntities())
                 {
                     var _plrs = (from p in txt.PLAYERs
-                                 where p.TEAMID == 1
                                  select p).ToList();
                     DateTime seasonstart = new DateTime(2016, 09, 01);
                     foreach (PLAYER _p in _plrs)
@@ -50,7 +49,46 @@ namespace TeamBuilder
 
                     foreach (TEAM _t in _tms)
                     {
-                        _teams.Add(_t);
+                        var _dobs = (from i in txt.PLAYERs where i.TEAMID == _t.ID select i.DOB).ToList();
+                        var _gen = (from i in txt.PLAYERs where i.TEAMID == _t.ID select i.GENDER).ToList();
+
+                        List<double> _age = new List<double>();
+                        foreach (var d in _dobs)
+                        {
+                            _age.Add(((DateTime.Now - DateTime.Parse(d.ToString())).TotalDays) / 365);
+                        }
+                        List<int> _genders = new List<int>();
+                        foreach (var g in _gen)
+                        {
+                            if (_gen != null)
+                            {
+                                _genders.Add((bool.Parse(g.ToString())) ? 0 : 1);
+                            }
+                        }
+
+                        double gensum = _genders.Sum();
+                        double count = _genders.Count();
+                        double gendersum = 0;
+                        if (count > 0)
+                        {
+                            gendersum = (gensum / count);
+                        }
+
+                        _teams.Add(new Local_Team
+                        {
+                            ID = _t.ID,
+                            NAME = _t.NAME.Trim(),
+                            COACH = _t.COACHes.Where(z => z.TEAMID == _t.ID).First().FNAME.Trim() + " " + _t.COACHes.Where(z => z.TEAMID == _t.ID).First().LNAME.Trim(),
+                            PLAYER1 = (_t.PLAYER1 != null) ? (from p in _players where p.ID == _t.PLAYER1 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER1 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER1 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER2 = (_t.PLAYER2 != null) ? (from p in _players where p.ID == _t.PLAYER2 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER2 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER2 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER3 = (_t.PLAYER3 != null) ? (from p in _players where p.ID == _t.PLAYER3 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER3 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER3 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER4 = (_t.PLAYER4 != null) ? (from p in _players where p.ID == _t.PLAYER4 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER4 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER4 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER5 = (_t.PLAYER5 != null) ? (from p in _players where p.ID == _t.PLAYER5 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER5 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER5 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER6 = (_t.PLAYER6 != null) ? (from p in _players where p.ID == _t.PLAYER6 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER6 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER6 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            AGE = (_age.Count() > 0) ? _age.Average() : 0,
+                            GENDER = gendersum * 100
+
+                        });
                     }
 
                     var _coch = (from c in txt.COACHes
@@ -61,9 +99,15 @@ namespace TeamBuilder
                         _coaches.Add(_c);
                     }
 
-                    rptPlayer.DataSource = _players;
+                    rptPlayer.DataSource = _players.Where(x => x.TEAMID == 1);
                     rptPlayer.DataBind();
+                    lblPlayerCount.Text = "[ " + _players.Count().ToString() + " ]";
 
+                    rptTeams.DataSource = _teams;
+                    rptTeams.DataBind();
+
+                    rptCoaches.DataSource = _coaches;
+                    rptCoaches.DataBind();
 
 
                 }
@@ -74,7 +118,7 @@ namespace TeamBuilder
         protected void ddlteam_SelectedIndexChanged(object sender, EventArgs e)
         {
             DropDownList ddl = (DropDownList)sender;
-            string selectedValue = ddl.SelectedValue;
+            int teamid = int.Parse(ddl.SelectedValue);
             int playerid = 0;
 
             RepeaterItem item = (RepeaterItem)ddl.NamingContainer;
@@ -93,11 +137,68 @@ namespace TeamBuilder
                          where s.ID == playerid
                          select s).FirstOrDefault();
 
-                p.TEAMID = int.Parse(selectedValue);
-                ptx.SaveChanges();
+
+
+                var t = (from x in ptx.TEAMs
+                         where x.ID == teamid
+                         select x).FirstOrDefault();
+                if (string.IsNullOrEmpty(t.PLAYER1.ToString()))
+                {
+                    t.PLAYER1 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("Default.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER2.ToString()))
+                {
+                    t.PLAYER2 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("Default.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER3.ToString()))
+                {
+                    t.PLAYER3 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("Default.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER4.ToString()))
+                {
+                    t.PLAYER4 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("Default.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER5.ToString()))
+                {
+                    t.PLAYER5 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("Default.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER6.ToString()))
+                {
+                    t.PLAYER6 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("Default.aspx");
+                }
+                else
+                {
+                    lblError.Text = "Team is full";
+                    lblError.Visible = true;
+                }
+                
             }
 
-            Response.Redirect("Default.aspx");
+            
 
         }
 
@@ -107,7 +208,7 @@ namespace TeamBuilder
             {
 
                 ((DropDownList)e.Item.FindControl("ddlteam")).DataSource = _teams;
-                ((DropDownList)e.Item.FindControl("ddlteam")).DataTextField = "Name";
+                ((DropDownList)e.Item.FindControl("ddlteam")).DataTextField = "NAME";
                 ((DropDownList)e.Item.FindControl("ddlteam")).DataValueField = "ID";
                 ((DropDownList)e.Item.FindControl("ddlteam")).DataBind();
 

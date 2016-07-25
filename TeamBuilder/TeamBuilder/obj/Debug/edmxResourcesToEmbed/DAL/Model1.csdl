@@ -33,6 +33,12 @@
     <Property Name="NAME" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="COACHes" Relationship="Self.FK_COACH_TEAM" FromRole="TEAM" ToRole="COACH" />
     <NavigationProperty Name="PLAYERs" Relationship="Self.FK_PLAYER_TEAM" FromRole="TEAM" ToRole="PLAYER" />
+    <Property Name="PLAYER1" Type="Int32" />
+    <Property Name="PLAYER2" Type="Int32" />
+    <Property Name="PLAYER3" Type="Int32" />
+    <Property Name="PLAYER4" Type="Int32" />
+    <Property Name="PLAYER5" Type="Int32" />
+    <Property Name="PLAYER6" Type="Int32" />
   </EntityType>
   <Association Name="FK_COACH_TEAM">
     <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />

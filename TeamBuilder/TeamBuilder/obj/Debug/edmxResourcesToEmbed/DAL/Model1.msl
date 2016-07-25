@@ -29,6 +29,12 @@
     <EntitySetMapping Name="TEAMs">
       <EntityTypeMapping TypeName="db5448bbf8bffc436783e8a649012e22ecModel.TEAM">
         <MappingFragment StoreEntitySet="TEAM">
+          <ScalarProperty Name="PLAYER6" ColumnName="PLAYER6" />
+          <ScalarProperty Name="PLAYER5" ColumnName="PLAYER5" />
+          <ScalarProperty Name="PLAYER4" ColumnName="PLAYER4" />
+          <ScalarProperty Name="PLAYER3" ColumnName="PLAYER3" />
+          <ScalarProperty Name="PLAYER2" ColumnName="PLAYER2" />
+          <ScalarProperty Name="PLAYER1" ColumnName="PLAYER1" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="NAME" ColumnName="NAME" />
         </MappingFragment>
