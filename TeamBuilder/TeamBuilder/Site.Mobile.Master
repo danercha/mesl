@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width" />
     <title><%: Page.Title %> - MESL Team Builder</title>
 
-    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <style type="text/css">
+
+    </style>
     <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
 </head>
 <body>
