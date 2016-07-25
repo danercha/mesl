@@ -50,4 +50,3 @@ C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\EntityFramework.dl
 C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\EntityFramework.SqlServer.dll
 C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\EntityFramework.xml
 C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\bin\EntityFramework.SqlServer.xml
-C:\Users\dercha\Source\Repos\mesl\TeamBuilder\TeamBuilder\obj\Release\TeamBuilder.csprojResolveAssemblyReference.cache
