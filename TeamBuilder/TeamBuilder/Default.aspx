@@ -1,7 +1,14 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TeamBuilder._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
+    <style type="text/css">
+        .jumbotron .container-team {
+            max-width: 50%;
+            text-align: left;
+            margin-left: 10px;
+            vertical-align: text-top;
+        }
+    </style>
     <div class="jumbotron">
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#players">Available Players</a></li>
@@ -57,46 +64,90 @@
                 </div>
             </div>
             <div id="team" class="tab-pane fade">
-                <asp:Repeater runat="server" ID="rptTeams">
-                    <ItemTemplate>
-                        <div class="container">
-                            <div class="row">
-                                <h3>
-                                    <h3><u><%# Eval("NAME") %></u></h3>
-                                </h3>
-                                <span class="col-sm-2">
-                                    <h4>Age: <%# Eval("AGE","{0:F2}") %></h4>
-                                </span>
-                                <div class="progress" style="width: 100px;">
-                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-                                        aria-valuenow='40' aria-valuemin="0" aria-valuemax="100" style='width: <%# Eval("GENDER","{0:F0}") + "%" %>'>
-                                        <%# Eval("GENDER","{0:F0}") %>%
+                <div class="table-responsive">
+                    <table class="table">
+                        <asp:Repeater runat="server" ID="rptTeams">
+                            <ItemTemplate>
+                                <tr>
+                                    <td>
+                                        <div class="container-team">
+                                            <div class="row">
+                                                <h3>
+                                                    <h3><u><%# Eval("NAME") %></u></h3>
+                                                </h3>
+                                                <span class="col-sm-3" style="background-color: yellow; margin-right: 5px;">
+                                                    <h4>Age: <%# Eval("AGE","{0:F2}") %></h4>
+                                                </span>
+                                                <div class="progress" style="width: 80px;">
+                                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                                                        aria-valuenow='40' aria-valuemin="0" aria-valuemax="100" style='width: <%# Eval("GENDER","{0:F0}") + "%" %>'>
+                                                        <%# Eval("GENDER","{0:F0}") %>%
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <h5><%# Eval("PLAYER1") %></h5>
+                                            </div>
+                                            <div class="row">
+                                                <h5><%# Eval("PLAYER2") %></h5>
+                                            </div>
+                                            <div class="row">
+                                                <h5><%# Eval("PLAYER3") %></h5>
+                                            </div>
+                                            <div class="row">
+                                                <h5><%# Eval("PLAYER4") %></h5>
+                                            </div>
+                                            <div class="row">
+                                                <h5><%# Eval("PLAYER5") %></h5>
+                                            </div>
+                                            <div class="row">
+                                                <h5><%# Eval("PLAYER6") %></h5>
+                                            </div>
+                                        </div>
+                                    </td>
+                            </ItemTemplate>
+                            <AlternatingItemTemplate>
+                                <td>
+                                    <div class="container-team">
+                                        <div class="row">
+                                            <h3>
+                                                <h3><u><%# Eval("NAME") %></u></h3>
+                                            </h3>
+                                            <span class="col-sm-3" style="background-color: yellow; margin-right: 5px;">
+                                                <h4>Age: <%# Eval("AGE","{0:F2}") %></h4>
+                                            </span>
+                                            <div class="progress" style="width: 80px;">
+                                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                                                    aria-valuenow='40' aria-valuemin="0" aria-valuemax="100" style='width: <%# Eval("GENDER","{0:F0}") + "%" %>'>
+                                                    <%# Eval("GENDER","{0:F0}") %>%
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <h5><%# Eval("PLAYER1") %></h5>
+                                        </div>
+                                        <div class="row">
+                                            <h5><%# Eval("PLAYER2") %></h5>
+                                        </div>
+                                        <div class="row">
+                                            <h5><%# Eval("PLAYER3") %></h5>
+                                        </div>
+                                        <div class="row">
+                                            <h5><%# Eval("PLAYER4") %></h5>
+                                        </div>
+                                        <div class="row">
+                                            <h5><%# Eval("PLAYER5") %></h5>
+                                        </div>
+                                        <div class="row">
+                                            <h5><%# Eval("PLAYER6") %></h5>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <h5><%# Eval("PLAYER1") %></h5>
-                            </div>
-                            <div class="row">
-                                <h5><%# Eval("PLAYER2") %></h5>
-                            </div>
-                            <div class="row">
-                                <h5><%# Eval("PLAYER3") %></h5>
-                            </div>
-                            <div class="row">
-                                <h5><%# Eval("PLAYER4") %></h5>
-                            </div>
-                            <div class="row">
-                                <h5><%# Eval("PLAYER5") %></h5>
-                            </div>
-                            <div class="row">
-                                <h5><%# Eval("PLAYER6") %></h5>
-                            </div>
-                        </div>
-
-
-                    </ItemTemplate>
-                </asp:Repeater>
+                                </td>
+                                </tr>
+                            </AlternatingItemTemplate>
+                        </asp:Repeater>
+                    </table>
+                </div>
             </div>
             <div id="coach" class="tab-pane fade">
                 <h3>Coaches</h3>
