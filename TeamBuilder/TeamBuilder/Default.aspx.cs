@@ -101,7 +101,7 @@ namespace TeamBuilder
 
                     rptPlayer.DataSource = _players.Where(x => x.TEAMID == 1);
                     rptPlayer.DataBind();
-                    lblPlayerCount.Text = "[ " + _players.Count().ToString() + " ]";
+                    lblPlayerCount.Text = "[ " + _players.Where(x => x.TEAMID == 1).Count().ToString() + " ]";
 
                     rptTeams.DataSource = _teams;
                     rptTeams.DataBind();
