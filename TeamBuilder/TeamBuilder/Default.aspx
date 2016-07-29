@@ -11,8 +11,9 @@
         <asp:Label runat="server" CssClass="label label-warning" ID="lblError" Visible="false"></asp:Label>
         <div class="tab-content">
             <div id="players" class="tab-pane fade in active">
-                    <h3>Available Players <asp:Label runat="server" ID="lblPlayerCount"></asp:Label></h3>
-                    
+                <h3>Available Players
+                    <asp:Label runat="server" ID="lblPlayerCount"></asp:Label></h3>
+
                 <div class="container">
                     <table class="table table-hover table-responsive">
                         <thead>
@@ -58,14 +59,42 @@
             <div id="team" class="tab-pane fade">
                 <asp:Repeater runat="server" ID="rptTeams">
                     <ItemTemplate>
-                        <h3><u><%# Eval("NAME") %></u></h3>
-                        <h4>Age: <%# Eval("AGE","{0:F2}") %>  Gender: <%# Eval("GENDER","{0:F0}") %>%</h4>
-                        <h5><%# Eval("PLAYER1") %></h5>
-                        <h5><%# Eval("PLAYER2") %></h5>
-                        <h5><%# Eval("PLAYER3") %></h5>
-                        <h5><%# Eval("PLAYER4") %></h5>
-                        <h5><%# Eval("PLAYER5") %></h5>
-                        <h5><%# Eval("PLAYER6") %></h5>
+                        <div class="container">
+                            <div class="row">
+                                <h3>
+                                    <h3><u><%# Eval("NAME") %></u></h3>
+                                </h3>
+                                <span class="col-sm-2">
+                                    <h4>Age: <%# Eval("AGE","{0:F2}") %></h4>
+                                </span>
+                                <div class="progress" style="width: 100px;">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                                        aria-valuenow='40' aria-valuemin="0" aria-valuemax="100" style='width: <%# Eval("GENDER","{0:F0}") + "%" %>'>
+                                        <%# Eval("GENDER","{0:F0}") %>%
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h5><%# Eval("PLAYER1") %></h5>
+                            </div>
+                            <div class="row">
+                                <h5><%# Eval("PLAYER2") %></h5>
+                            </div>
+                            <div class="row">
+                                <h5><%# Eval("PLAYER3") %></h5>
+                            </div>
+                            <div class="row">
+                                <h5><%# Eval("PLAYER4") %></h5>
+                            </div>
+                            <div class="row">
+                                <h5><%# Eval("PLAYER5") %></h5>
+                            </div>
+                            <div class="row">
+                                <h5><%# Eval("PLAYER6") %></h5>
+                            </div>
+                        </div>
+
+
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
