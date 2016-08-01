@@ -12,6 +12,7 @@
     <div class="jumbotron">
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#players">Available Players</a></li>
+            <li><a data-toggle="tab" href="#allplayers">All Players</a></li>
             <li><a data-toggle="tab" href="#team">Teams</a></li>
             <li><a data-toggle="tab" href="#coach">Coaches</a></li>
         </ul>
@@ -63,6 +64,50 @@
                     </table>
                 </div>
             </div>
+            <div id="allplayers" class="tab-pane fade">
+                <h3>All Players
+                    <asp:Label runat="server" ID="lblAllPlayerCount"></asp:Label></h3>
+
+                <div class="container">
+                    <table class="table table-hover table-responsive">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>DOB</th>
+                                <th>Age</th>
+                                <th>Age at Season</th>
+                                <th>Gender</th>
+                                <th>Notes</th>
+                                <th>Seasons Played</th>
+                                <th>Team</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <asp:Repeater ID="rptAllPlayer" runat="server">
+                                <ItemTemplate>
+                                    <tr>
+
+                                        <td>
+                                            <asp:HiddenField runat="server" ID="hdnID" Value='<%# Eval("ID") %>' />
+                                        </td>
+                                        <td><%# Eval("FNAME") %></td>
+                                        <td><%# Eval("LNAME") %></td>
+                                        <td><%# DataBinder.Eval(Container.DataItem, "DOB", "{0:MM/dd/yyyy}") %></td>
+                                        <td><%# Eval("AGE","{0:F2}") %></td>
+                                        <td><%# Eval("AGESTART","{0:F2}") %></td>
+                                        <td><%# (bool.Parse(Eval("GENDER").ToString()) == true) ? "M" : "F" %></td>
+                                        <td><%# Eval("NOTES")%></td>
+                                        <td><%# Eval("SEASONSPLAYED") %></td>
+                                        <td><%# Eval("TEAMID") %></td>
+                                    </tr>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <div id="team" class="tab-pane fade">
                 <div class="table-responsive">
                     <table class="table">
@@ -73,7 +118,7 @@
                                         <div class="container-team">
                                             <div class="row">
                                                 <h3>
-                                                    <h3><u><%# Eval("NAME") %></u></h3>
+                                                    <h3><u><%# Eval("NAME") %></u> <span style="font-size: small;"><%# Eval("COACH") %></span></h3>
                                                 </h3>
                                                 <span class="col-sm-3" style="background-color: yellow; margin-right: 5px;">
                                                     <h4>Age: <%# Eval("AGE","{0:F2}") %></h4>
@@ -111,7 +156,7 @@
                                     <div class="container-team">
                                         <div class="row">
                                             <h3>
-                                                <h3><u><%# Eval("NAME") %></u></h3>
+                                                <h3><u><%# Eval("NAME") %></u> <span style="font-size: small;"><%# Eval("COACH") %></span></h3>
                                             </h3>
                                             <span class="col-sm-3" style="background-color: yellow; margin-right: 5px;">
                                                 <h4>Age: <%# Eval("AGE","{0:F2}") %></h4>
