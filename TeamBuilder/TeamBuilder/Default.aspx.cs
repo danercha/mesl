@@ -199,10 +199,10 @@ namespace TeamBuilder
                     lblError.Text = "Team is full";
                     lblError.Visible = true;
                 }
-                
+
             }
 
-            
+
 
         }
 
@@ -218,5 +218,62 @@ namespace TeamBuilder
 
             }
         }
+
+        protected void rptTeams_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            switch (e.CommandName)
+            {
+                case "Delete":
+                    var teamplacenumber = e.CommandArgument.ToString().Split('_');
+                    string teamname = teamplacenumber[0].ToString().Trim();
+                    int teammembernumber = int.Parse(teamplacenumber[1].ToString());
+
+                    using (MESLEntities ttx = new MESLEntities())
+                    {
+                        var _t = (from t in ttx.TEAMs
+                                  where t.NAME == teamname
+                                  select t).FirstOrDefault();
+
+                        switch (teammembernumber)
+                        {
+                            case 1:
+                                var _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER1 select p).First();
+                                _p.TEAMID = 1;
+                                _t.PLAYER1 = null;
+                                break;
+                            case 2:
+                                var _p2 = (from p in ttx.PLAYERs where p.ID == _t.PLAYER2 select p).First();
+                                _p2.TEAMID = 1;
+                                _t.PLAYER2 = null;
+                                break;
+                            case 3:
+                                var _p3 = (from p in ttx.PLAYERs where p.ID == _t.PLAYER3 select p).First();
+                                _p3.TEAMID = 1;
+                                _t.PLAYER3 = null;
+                                break;
+                            case 4:
+                                var _p4 = (from p in ttx.PLAYERs where p.ID == _t.PLAYER4 select p).First();
+                                _p4.TEAMID = 1;
+                                _t.PLAYER4 = null;
+                                break;
+                            case 5:
+                                var _p5 = (from p in ttx.PLAYERs where p.ID == _t.PLAYER5 select p).First();
+                                _p5.TEAMID = 1;
+                                _t.PLAYER5 = null;
+                                break;
+                            case 6:
+                                var _p6 = (from p in ttx.PLAYERs where p.ID == _t.PLAYER6 select p).First();
+                                _p6.TEAMID = 1;
+                                _t.PLAYER6 = null;
+                                break;
+                        }
+                        ttx.SaveChanges();
+                    }
+
+                    break;
+            }
+            Response.Redirect("Default.aspx");
+        }
     }
+
 }
