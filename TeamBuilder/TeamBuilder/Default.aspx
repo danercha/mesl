@@ -9,6 +9,25 @@
             vertical-align: text-top;
         }
     </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            (function ($) {
+
+                $('#filter').keyup(function () {
+
+                    var rex = new RegExp($(this).val(), 'i');
+                    $('.searchable tr').hide();
+                    $('.searchable tr').filter(function () {
+                        return rex.test($(this).text());
+                    }).show();
+
+                })
+
+            }(jQuery));
+
+        });
+    </script>
     <div class="jumbotron">
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#players">Available Players</a></li>
@@ -67,7 +86,11 @@
             <div id="allplayers" class="tab-pane fade">
                 <h3>All Players
                     <asp:Label runat="server" ID="lblAllPlayerCount"></asp:Label></h3>
+                <div class="input-group">
+                    <span class="input-group-addon">Filter</span>
 
+                    <input id="filter" type="text" class="form-control" placeholder="Type here...">
+                </div>
                 <div class="container">
                     <table class="table table-hover table-responsive">
                         <thead>
@@ -84,7 +107,7 @@
                                 <th>Team</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="searchable">
                             <asp:Repeater ID="rptAllPlayer" runat="server">
                                 <ItemTemplate>
                                     <tr>
