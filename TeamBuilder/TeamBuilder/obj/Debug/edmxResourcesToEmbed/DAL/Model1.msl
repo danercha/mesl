@@ -40,5 +40,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ASSISTANTs">
+      <EntityTypeMapping TypeName="db5448bbf8bffc436783e8a649012e22ecModel.ASSISTANT">
+        <MappingFragment StoreEntitySet="ASSISTANT">
+          <ScalarProperty Name="TEAMID" ColumnName="TEAMID" />
+          <ScalarProperty Name="LNAME" ColumnName="LNAME" />
+          <ScalarProperty Name="FNAME" ColumnName="FNAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

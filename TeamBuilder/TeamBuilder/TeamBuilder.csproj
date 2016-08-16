@@ -221,6 +221,9 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\ASSISTANT.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\COACH.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

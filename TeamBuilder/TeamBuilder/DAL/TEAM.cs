@@ -19,6 +19,7 @@ namespace TeamBuilder.DAL
         {
             this.COACHes = new HashSet<COACH>();
             this.PLAYERs = new HashSet<PLAYER>();
+            this.ASSISTANTs = new HashSet<ASSISTANT>();
         }
     
         public int ID { get; set; }
@@ -34,5 +35,7 @@ namespace TeamBuilder.DAL
         public virtual ICollection<COACH> COACHes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PLAYER> PLAYERs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ASSISTANT> ASSISTANTs { get; set; }
     }
 }

@@ -74,11 +74,18 @@ namespace TeamBuilder
                             gendersum = (gensum / count);
                         }
 
+                        var _ass = (from a in txt.ASSISTANTs where a.TEAMID == _t.ID select new { name = "[" + a.FNAME.Trim() + " " + a.LNAME.Trim() + "]" }).FirstOrDefault();
+                        string assname = string.Empty;
+                        if (_ass != null)
+                        {
+                            assname = _ass.name;
+                        }
+
                         _teams.Add(new Local_Team
                         {
                             ID = _t.ID,
                             NAME = _t.NAME.Trim(),
-                            COACH = _t.COACHes.Where(z => z.TEAMID == _t.ID).First().FNAME.Trim() + " " + _t.COACHes.Where(z => z.TEAMID == _t.ID).First().LNAME.Trim(),
+                            COACH = _t.COACHes.Where(z => z.TEAMID == _t.ID).First().FNAME.Trim() + " " + _t.COACHes.Where(z => z.TEAMID == _t.ID).First().LNAME.Trim() + " " + assname,
                             PLAYER1 = (!string.IsNullOrEmpty(_t.PLAYER1.ToString())) ? (((from p in _players where p.ID == _t.PLAYER1 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER1 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER1 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER1 select p).First().AGE.ToString("#.##") + " ]" : "",
                             PLAYER2 = (!string.IsNullOrEmpty(_t.PLAYER2.ToString())) ? (((from p in _players where p.ID == _t.PLAYER2 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER2 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER2 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER2 select p).First().AGE.ToString("#.##") + " ]" : "",
                             PLAYER3 = (!string.IsNullOrEmpty(_t.PLAYER3.ToString())) ? (((from p in _players where p.ID == _t.PLAYER3 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER3 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER3 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER3 select p).First().AGE.ToString("#.##") + " ]" : "",

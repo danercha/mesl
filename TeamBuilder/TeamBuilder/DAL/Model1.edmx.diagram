@@ -10,6 +10,8 @@
         <EntityTypeShape EntityType="db5448bbf8bffc436783e8a649012e22ecModel.TEAM" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
         <AssociationConnector Association="db5448bbf8bffc436783e8a649012e22ecModel.FK_COACH_TEAM" ManuallyRouted="false" />
         <AssociationConnector Association="db5448bbf8bffc436783e8a649012e22ecModel.FK_PLAYER_TEAM" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="db5448bbf8bffc436783e8a649012e22ecModel.ASSISTANT" Width="1.5" PointX="3" PointY="7.625" />
+        <AssociationConnector Association="db5448bbf8bffc436783e8a649012e22ecModel.FK_ASSISTANT_TEAM" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

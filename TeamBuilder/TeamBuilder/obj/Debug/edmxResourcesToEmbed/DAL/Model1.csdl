@@ -39,6 +39,7 @@
     <Property Name="PLAYER4" Type="Int32" />
     <Property Name="PLAYER5" Type="Int32" />
     <Property Name="PLAYER6" Type="Int32" />
+    <NavigationProperty Name="ASSISTANTs" Relationship="db5448bbf8bffc436783e8a649012e22ecModel.FK_ASSISTANT_TEAM" FromRole="TEAM" ToRole="ASSISTANT" />
   </EntityType>
   <Association Name="FK_COACH_TEAM">
     <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />
@@ -76,5 +77,32 @@
       <End Role="TEAM" EntitySet="TEAMs" />
       <End Role="PLAYER" EntitySet="PLAYERs" />
     </AssociationSet>
+    <EntitySet Name="ASSISTANTs" EntityType="db5448bbf8bffc436783e8a649012e22ecModel.ASSISTANT" />
+    <AssociationSet Name="FK_ASSISTANT_TEAM" Association="db5448bbf8bffc436783e8a649012e22ecModel.FK_ASSISTANT_TEAM">
+      <End Role="TEAM" EntitySet="TEAMs" />
+      <End Role="ASSISTANT" EntitySet="ASSISTANTs" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="ASSISTANT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FNAME" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+    <Property Name="LNAME" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+    <Property Name="TEAMID" Type="Int32" />
+    <NavigationProperty Name="TEAM" Relationship="db5448bbf8bffc436783e8a649012e22ecModel.FK_ASSISTANT_TEAM" FromRole="ASSISTANT" ToRole="TEAM" />
+  </EntityType>
+  <Association Name="FK_ASSISTANT_TEAM">
+    <End Type="db5448bbf8bffc436783e8a649012e22ecModel.TEAM" Role="TEAM" Multiplicity="0..1" />
+    <End Type="db5448bbf8bffc436783e8a649012e22ecModel.ASSISTANT" Role="ASSISTANT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEAM">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ASSISTANT">
+        <PropertyRef Name="TEAMID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

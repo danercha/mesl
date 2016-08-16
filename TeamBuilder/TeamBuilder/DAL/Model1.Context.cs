@@ -28,5 +28,6 @@ namespace TeamBuilder.DAL
         public virtual DbSet<COACH> COACHes { get; set; }
         public virtual DbSet<PLAYER> PLAYERs { get; set; }
         public virtual DbSet<TEAM> TEAMs { get; set; }
+        public virtual DbSet<ASSISTANT> ASSISTANTs { get; set; }
     }
 }
