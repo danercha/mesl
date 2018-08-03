@@ -24,7 +24,7 @@ namespace TeamBuilder
                     var _plrs = (from p in txt.PLAYERs
                                  where p.DIVISION.Trim() == _division
                                  select p).ToList();
-                    DateTime seasonstart = new DateTime(2016, 09, 01);
+                    DateTime seasonstart = new DateTime(DateTime.Now.Year, 09, 01);
                     foreach (PLAYER _p in _plrs)
                     {
                         _players.Add(new Local_player
