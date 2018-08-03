@@ -13,6 +13,7 @@
           <Property Name="FNAME" Type="nchar" MaxLength="25" />
           <Property Name="LNAME" Type="nchar" MaxLength="25" />
           <Property Name="TEAMID" Type="int" />
+          <Property Name="DIVISION" Type="nchar" MaxLength="4" />
         </EntityType>
         <EntityType Name="COACH">
           <Key>
@@ -22,6 +23,7 @@
           <Property Name="FNAME" Type="nchar" MaxLength="25" />
           <Property Name="LNAME" Type="nchar" MaxLength="25" />
           <Property Name="TEAMID" Type="int" />
+          <Property Name="DIVISION" Type="nchar" MaxLength="4" />
         </EntityType>
         <EntityType Name="PLAYER">
           <Key>
@@ -36,6 +38,7 @@
           <Property Name="PLAYERNOTE" Type="nchar" MaxLength="250" />
           <Property Name="SEASONSPLAYED" Type="nchar" MaxLength="10" />
           <Property Name="TEAMID" Type="int" />
+          <Property Name="DIVISION" Type="nchar" MaxLength="4" />
         </EntityType>
         <EntityType Name="TEAM">
           <Key>
@@ -49,9 +52,12 @@
           <Property Name="PLAYER4" Type="int" />
           <Property Name="PLAYER5" Type="int" />
           <Property Name="PLAYER6" Type="int" />
+          <Property Name="DIVISION" Type="nchar" MaxLength="4" />
         </EntityType>
         <Association Name="FK_ASSISTANT_TEAM">
-          <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />
+          <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="ASSISTANT" Type="Self.ASSISTANT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TEAM">
@@ -63,7 +69,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_COACH_TEAM">
-          <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />
+          <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="COACH" Type="Self.COACH" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TEAM">
@@ -75,7 +83,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PLAYER_TEAM">
-          <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />
+          <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PLAYER" Type="Self.PLAYER" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TEAM">
@@ -117,6 +127,7 @@
           <Property Name="LNAME" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
           <Property Name="TEAMID" Type="Int32" />
           <NavigationProperty Name="TEAM" Relationship="Self.FK_COACH_TEAM" FromRole="COACH" ToRole="TEAM" />
+          <Property Name="DIVISION" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="PLAYER">
           <Key>
@@ -132,6 +143,7 @@
           <Property Name="SEASONSPLAYED" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="TEAMID" Type="Int32" />
           <NavigationProperty Name="TEAM" Relationship="Self.FK_PLAYER_TEAM" FromRole="PLAYER" ToRole="TEAM" />
+          <Property Name="DIVISION" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="TEAM">
           <Key>
@@ -148,6 +160,7 @@
           <Property Name="PLAYER5" Type="Int32" />
           <Property Name="PLAYER6" Type="Int32" />
           <NavigationProperty Name="ASSISTANTs" Relationship="db5448bbf8bffc436783e8a649012e22ecModel.FK_ASSISTANT_TEAM" FromRole="TEAM" ToRole="ASSISTANT" />
+          <Property Name="DIVISION" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
         </EntityType>
         <Association Name="FK_COACH_TEAM">
           <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />
@@ -200,6 +213,7 @@
           <Property Name="LNAME" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
           <Property Name="TEAMID" Type="Int32" />
           <NavigationProperty Name="TEAM" Relationship="db5448bbf8bffc436783e8a649012e22ecModel.FK_ASSISTANT_TEAM" FromRole="ASSISTANT" ToRole="TEAM" />
+          <Property Name="DIVISION" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
         </EntityType>
         <Association Name="FK_ASSISTANT_TEAM">
           <End Type="db5448bbf8bffc436783e8a649012e22ecModel.TEAM" Role="TEAM" Multiplicity="0..1" />
@@ -222,6 +236,7 @@
           <EntitySetMapping Name="COACHes">
             <EntityTypeMapping TypeName="db5448bbf8bffc436783e8a649012e22ecModel.COACH">
               <MappingFragment StoreEntitySet="COACH">
+                <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="FNAME" ColumnName="FNAME" />
                 <ScalarProperty Name="LNAME" ColumnName="LNAME" />
@@ -232,6 +247,7 @@
           <EntitySetMapping Name="PLAYERs">
             <EntityTypeMapping TypeName="db5448bbf8bffc436783e8a649012e22ecModel.PLAYER">
               <MappingFragment StoreEntitySet="PLAYER">
+                <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="FNAME" ColumnName="FNAME" />
                 <ScalarProperty Name="LNAME" ColumnName="LNAME" />
@@ -247,6 +263,7 @@
           <EntitySetMapping Name="TEAMs">
             <EntityTypeMapping TypeName="db5448bbf8bffc436783e8a649012e22ecModel.TEAM">
               <MappingFragment StoreEntitySet="TEAM">
+                <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
                 <ScalarProperty Name="PLAYER6" ColumnName="PLAYER6" />
                 <ScalarProperty Name="PLAYER5" ColumnName="PLAYER5" />
                 <ScalarProperty Name="PLAYER4" ColumnName="PLAYER4" />
@@ -261,6 +278,7 @@
           <EntitySetMapping Name="ASSISTANTs">
             <EntityTypeMapping TypeName="db5448bbf8bffc436783e8a649012e22ecModel.ASSISTANT">
               <MappingFragment StoreEntitySet="ASSISTANT">
+                <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
                 <ScalarProperty Name="TEAMID" ColumnName="TEAMID" />
                 <ScalarProperty Name="LNAME" ColumnName="LNAME" />
                 <ScalarProperty Name="FNAME" ColumnName="FNAME" />

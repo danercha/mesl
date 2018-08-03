@@ -23,6 +23,7 @@ namespace TeamBuilder.DAL
         public string PLAYERNOTE { get; set; }
         public string SEASONSPLAYED { get; set; }
         public Nullable<int> TEAMID { get; set; }
+        public string DIVISION { get; set; }
     
         public virtual TEAM TEAM { get; set; }
     }

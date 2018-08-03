@@ -18,6 +18,7 @@ namespace TeamBuilder.DAL
         public string FNAME { get; set; }
         public string LNAME { get; set; }
         public Nullable<int> TEAMID { get; set; }
+        public string DIVISION { get; set; }
     
         public virtual TEAM TEAM { get; set; }
     }
