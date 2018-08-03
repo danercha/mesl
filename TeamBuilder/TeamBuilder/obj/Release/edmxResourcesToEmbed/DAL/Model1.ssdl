@@ -8,6 +8,7 @@
     <Property Name="FNAME" Type="nchar" MaxLength="25" />
     <Property Name="LNAME" Type="nchar" MaxLength="25" />
     <Property Name="TEAMID" Type="int" />
+    <Property Name="DIVISION" Type="nchar" MaxLength="4" />
   </EntityType>
   <EntityType Name="COACH">
     <Key>
@@ -17,6 +18,7 @@
     <Property Name="FNAME" Type="nchar" MaxLength="25" />
     <Property Name="LNAME" Type="nchar" MaxLength="25" />
     <Property Name="TEAMID" Type="int" />
+    <Property Name="DIVISION" Type="nchar" MaxLength="4" />
   </EntityType>
   <EntityType Name="PLAYER">
     <Key>
@@ -31,6 +33,7 @@
     <Property Name="PLAYERNOTE" Type="nchar" MaxLength="250" />
     <Property Name="SEASONSPLAYED" Type="nchar" MaxLength="10" />
     <Property Name="TEAMID" Type="int" />
+    <Property Name="DIVISION" Type="nchar" MaxLength="4" />
   </EntityType>
   <EntityType Name="TEAM">
     <Key>
@@ -44,9 +47,12 @@
     <Property Name="PLAYER4" Type="int" />
     <Property Name="PLAYER5" Type="int" />
     <Property Name="PLAYER6" Type="int" />
+    <Property Name="DIVISION" Type="nchar" MaxLength="4" />
   </EntityType>
   <Association Name="FK_ASSISTANT_TEAM">
-    <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />
+    <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="ASSISTANT" Type="Self.ASSISTANT" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TEAM">
@@ -58,7 +64,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_COACH_TEAM">
-    <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />
+    <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="COACH" Type="Self.COACH" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TEAM">
@@ -70,7 +78,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PLAYER_TEAM">
-    <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />
+    <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="PLAYER" Type="Self.PLAYER" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TEAM">

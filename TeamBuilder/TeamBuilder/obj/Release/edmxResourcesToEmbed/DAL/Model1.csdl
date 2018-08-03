@@ -9,6 +9,7 @@
     <Property Name="LNAME" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
     <Property Name="TEAMID" Type="Int32" />
     <NavigationProperty Name="TEAM" Relationship="Self.FK_COACH_TEAM" FromRole="COACH" ToRole="TEAM" />
+    <Property Name="DIVISION" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="PLAYER">
     <Key>
@@ -24,6 +25,7 @@
     <Property Name="SEASONSPLAYED" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="TEAMID" Type="Int32" />
     <NavigationProperty Name="TEAM" Relationship="Self.FK_PLAYER_TEAM" FromRole="PLAYER" ToRole="TEAM" />
+    <Property Name="DIVISION" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="TEAM">
     <Key>
@@ -40,6 +42,7 @@
     <Property Name="PLAYER5" Type="Int32" />
     <Property Name="PLAYER6" Type="Int32" />
     <NavigationProperty Name="ASSISTANTs" Relationship="db5448bbf8bffc436783e8a649012e22ecModel.FK_ASSISTANT_TEAM" FromRole="TEAM" ToRole="ASSISTANT" />
+    <Property Name="DIVISION" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
   </EntityType>
   <Association Name="FK_COACH_TEAM">
     <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />
@@ -92,6 +95,7 @@
     <Property Name="LNAME" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
     <Property Name="TEAMID" Type="Int32" />
     <NavigationProperty Name="TEAM" Relationship="db5448bbf8bffc436783e8a649012e22ecModel.FK_ASSISTANT_TEAM" FromRole="ASSISTANT" ToRole="TEAM" />
+    <Property Name="DIVISION" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
   </EntityType>
   <Association Name="FK_ASSISTANT_TEAM">
     <End Type="db5448bbf8bffc436783e8a649012e22ecModel.TEAM" Role="TEAM" Multiplicity="0..1" />

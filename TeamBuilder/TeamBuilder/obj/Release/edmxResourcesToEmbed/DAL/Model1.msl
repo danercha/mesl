@@ -4,6 +4,7 @@
     <EntitySetMapping Name="COACHes">
       <EntityTypeMapping TypeName="db5448bbf8bffc436783e8a649012e22ecModel.COACH">
         <MappingFragment StoreEntitySet="COACH">
+          <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="FNAME" ColumnName="FNAME" />
           <ScalarProperty Name="LNAME" ColumnName="LNAME" />
@@ -14,6 +15,7 @@
     <EntitySetMapping Name="PLAYERs">
       <EntityTypeMapping TypeName="db5448bbf8bffc436783e8a649012e22ecModel.PLAYER">
         <MappingFragment StoreEntitySet="PLAYER">
+          <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="FNAME" ColumnName="FNAME" />
           <ScalarProperty Name="LNAME" ColumnName="LNAME" />
@@ -29,6 +31,7 @@
     <EntitySetMapping Name="TEAMs">
       <EntityTypeMapping TypeName="db5448bbf8bffc436783e8a649012e22ecModel.TEAM">
         <MappingFragment StoreEntitySet="TEAM">
+          <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
           <ScalarProperty Name="PLAYER6" ColumnName="PLAYER6" />
           <ScalarProperty Name="PLAYER5" ColumnName="PLAYER5" />
           <ScalarProperty Name="PLAYER4" ColumnName="PLAYER4" />
@@ -43,6 +46,7 @@
     <EntitySetMapping Name="ASSISTANTs">
       <EntityTypeMapping TypeName="db5448bbf8bffc436783e8a649012e22ecModel.ASSISTANT">
         <MappingFragment StoreEntitySet="ASSISTANT">
+          <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
           <ScalarProperty Name="TEAMID" ColumnName="TEAMID" />
           <ScalarProperty Name="LNAME" ColumnName="LNAME" />
           <ScalarProperty Name="FNAME" ColumnName="FNAME" />
