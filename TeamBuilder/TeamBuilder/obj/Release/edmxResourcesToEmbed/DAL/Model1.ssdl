@@ -48,6 +48,12 @@
     <Property Name="PLAYER5" Type="int" />
     <Property Name="PLAYER6" Type="int" />
     <Property Name="DIVISION" Type="nchar" MaxLength="4" />
+    <Property Name="PLAYER7" Type="int" />
+    <Property Name="PLAYER8" Type="int" />
+    <Property Name="PLAYER9" Type="int" />
+    <Property Name="PLAYER10" Type="int" />
+    <Property Name="PLAYER11" Type="int" />
+    <Property Name="PLAYER12" Type="int" />
   </EntityType>
   <Association Name="FK_ASSISTANT_TEAM">
     <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1">

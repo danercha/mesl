@@ -53,6 +53,12 @@
           <Property Name="PLAYER5" Type="int" />
           <Property Name="PLAYER6" Type="int" />
           <Property Name="DIVISION" Type="nchar" MaxLength="4" />
+          <Property Name="PLAYER7" Type="int" />
+          <Property Name="PLAYER8" Type="int" />
+          <Property Name="PLAYER9" Type="int" />
+          <Property Name="PLAYER10" Type="int" />
+          <Property Name="PLAYER11" Type="int" />
+          <Property Name="PLAYER12" Type="int" />
         </EntityType>
         <Association Name="FK_ASSISTANT_TEAM">
           <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1">
@@ -161,6 +167,12 @@
           <Property Name="PLAYER6" Type="Int32" />
           <NavigationProperty Name="ASSISTANTs" Relationship="db5448bbf8bffc436783e8a649012e22ecModel.FK_ASSISTANT_TEAM" FromRole="TEAM" ToRole="ASSISTANT" />
           <Property Name="DIVISION" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="PLAYER7" Type="Int32" />
+          <Property Name="PLAYER8" Type="Int32" />
+          <Property Name="PLAYER9" Type="Int32" />
+          <Property Name="PLAYER10" Type="Int32" />
+          <Property Name="PLAYER11" Type="Int32" />
+          <Property Name="PLAYER12" Type="Int32" />
         </EntityType>
         <Association Name="FK_COACH_TEAM">
           <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />
@@ -263,6 +275,12 @@
           <EntitySetMapping Name="TEAMs">
             <EntityTypeMapping TypeName="db5448bbf8bffc436783e8a649012e22ecModel.TEAM">
               <MappingFragment StoreEntitySet="TEAM">
+                <ScalarProperty Name="PLAYER12" ColumnName="PLAYER12" />
+                <ScalarProperty Name="PLAYER11" ColumnName="PLAYER11" />
+                <ScalarProperty Name="PLAYER10" ColumnName="PLAYER10" />
+                <ScalarProperty Name="PLAYER9" ColumnName="PLAYER9" />
+                <ScalarProperty Name="PLAYER8" ColumnName="PLAYER8" />
+                <ScalarProperty Name="PLAYER7" ColumnName="PLAYER7" />
                 <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
                 <ScalarProperty Name="PLAYER6" ColumnName="PLAYER6" />
                 <ScalarProperty Name="PLAYER5" ColumnName="PLAYER5" />

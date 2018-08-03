@@ -91,6 +91,12 @@ namespace TeamBuilder.Divisions
                             PLAYER4 = (!string.IsNullOrEmpty(_t.PLAYER4.ToString())) ? (((from p in _players where p.ID == _t.PLAYER4 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER4 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER4 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER4 select p).First().AGE.ToString("#.##") + " ]" : "",
                             PLAYER5 = (!string.IsNullOrEmpty(_t.PLAYER5.ToString())) ? (((from p in _players where p.ID == _t.PLAYER5 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER5 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER5 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER5 select p).First().AGE.ToString("#.##") + " ]" : "",
                             PLAYER6 = (!string.IsNullOrEmpty(_t.PLAYER6.ToString())) ? (((from p in _players where p.ID == _t.PLAYER6 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER6 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER6 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER6 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER7 = (!string.IsNullOrEmpty(_t.PLAYER7.ToString())) ? (((from p in _players where p.ID == _t.PLAYER7 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER7 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER7 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER7 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER8 = (!string.IsNullOrEmpty(_t.PLAYER8.ToString())) ? (((from p in _players where p.ID == _t.PLAYER8 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER8 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER8 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER8 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER9 = (!string.IsNullOrEmpty(_t.PLAYER9.ToString())) ? (((from p in _players where p.ID == _t.PLAYER9 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER9 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER9 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER9 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER10 = (!string.IsNullOrEmpty(_t.PLAYER10.ToString())) ? (((from p in _players where p.ID == _t.PLAYER10 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER10 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER10 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER10 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER11 = (!string.IsNullOrEmpty(_t.PLAYER11.ToString())) ? (((from p in _players where p.ID == _t.PLAYER11 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER11 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER11 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER11 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER12 = (!string.IsNullOrEmpty(_t.PLAYER12.ToString())) ? (((from p in _players where p.ID == _t.PLAYER12 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER12 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER12 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER12 select p).First().AGE.ToString("#.##") + " ]" : "",
                             AGE = (_age.Count() > 0) ? _age.Average() : 0,
                             GENDER = gendersum * 100
 
@@ -159,7 +165,7 @@ namespace TeamBuilder.Divisions
                     p.TEAMID = teamid;
                     ptx.SaveChanges();
                     ptx.Dispose();
-                    Response.Redirect("U6.aspx");
+                    Response.Redirect("U8.aspx");
                 }
                 else if (string.IsNullOrEmpty(t.PLAYER2.ToString()))
                 {
@@ -167,7 +173,7 @@ namespace TeamBuilder.Divisions
                     p.TEAMID = teamid;
                     ptx.SaveChanges();
                     ptx.Dispose();
-                    Response.Redirect("U6.aspx");
+                    Response.Redirect("U8.aspx");
                 }
                 else if (string.IsNullOrEmpty(t.PLAYER3.ToString()))
                 {
@@ -175,7 +181,7 @@ namespace TeamBuilder.Divisions
                     p.TEAMID = teamid;
                     ptx.SaveChanges();
                     ptx.Dispose();
-                    Response.Redirect("U6.aspx");
+                    Response.Redirect("U8.aspx");
                 }
                 else if (string.IsNullOrEmpty(t.PLAYER4.ToString()))
                 {
@@ -183,7 +189,7 @@ namespace TeamBuilder.Divisions
                     p.TEAMID = teamid;
                     ptx.SaveChanges();
                     ptx.Dispose();
-                    Response.Redirect("U6.aspx");
+                    Response.Redirect("U8.aspx");
                 }
                 else if (string.IsNullOrEmpty(t.PLAYER5.ToString()))
                 {
@@ -191,7 +197,7 @@ namespace TeamBuilder.Divisions
                     p.TEAMID = teamid;
                     ptx.SaveChanges();
                     ptx.Dispose();
-                    Response.Redirect("U6.aspx");
+                    Response.Redirect("U8.aspx");
                 }
                 else if (string.IsNullOrEmpty(t.PLAYER6.ToString()))
                 {
@@ -199,7 +205,55 @@ namespace TeamBuilder.Divisions
                     p.TEAMID = teamid;
                     ptx.SaveChanges();
                     ptx.Dispose();
-                    Response.Redirect("U6.aspx");
+                    Response.Redirect("U8.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER7.ToString()))
+                {
+                    t.PLAYER7 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("U8.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER8.ToString()))
+                {
+                    t.PLAYER8 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("U8.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER9.ToString()))
+                {
+                    t.PLAYER9 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("U.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER10.ToString()))
+                {
+                    t.PLAYER10 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("U8.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER11.ToString()))
+                {
+                    t.PLAYER11 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("U8.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER12.ToString()))
+                {
+                    t.PLAYER12 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("U8.aspx");
                 }
                 else
                 {
@@ -279,7 +333,7 @@ namespace TeamBuilder.Divisions
 
                     break;
             }
-            Response.Redirect("U6.aspx");
+            Response.Redirect("U8.aspx");
         }
     }
 }

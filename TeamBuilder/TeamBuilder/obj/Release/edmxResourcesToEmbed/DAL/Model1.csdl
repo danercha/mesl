@@ -43,6 +43,12 @@
     <Property Name="PLAYER6" Type="Int32" />
     <NavigationProperty Name="ASSISTANTs" Relationship="db5448bbf8bffc436783e8a649012e22ecModel.FK_ASSISTANT_TEAM" FromRole="TEAM" ToRole="ASSISTANT" />
     <Property Name="DIVISION" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="PLAYER7" Type="Int32" />
+    <Property Name="PLAYER8" Type="Int32" />
+    <Property Name="PLAYER9" Type="Int32" />
+    <Property Name="PLAYER10" Type="Int32" />
+    <Property Name="PLAYER11" Type="Int32" />
+    <Property Name="PLAYER12" Type="Int32" />
   </EntityType>
   <Association Name="FK_COACH_TEAM">
     <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />
