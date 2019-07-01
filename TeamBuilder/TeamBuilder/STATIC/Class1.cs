@@ -39,6 +39,14 @@ namespace TeamBuilder.STATIC
         public string PLAYER10 { get; set; }
         public string PLAYER11 { get; set; }
         public string PLAYER12 { get; set; }
+        public string PLAYER13 { get; set; }
+        public string PLAYER14 { get; set; }
+        public string PLAYER15 { get; set; }
+        public string PLAYER16 { get; set; }
+        public string PLAYER17 { get; set; }
+        public string PLAYER18 { get; set; }
+        public string PLAYER19 { get; set; }
+        public string PLAYER20 { get; set; }
         public double AGE { get; set; }
         public double GENDER { get; set; }
     }

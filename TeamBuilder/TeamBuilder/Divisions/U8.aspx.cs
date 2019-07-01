@@ -229,7 +229,7 @@ namespace TeamBuilder.Divisions
                     p.TEAMID = teamid;
                     ptx.SaveChanges();
                     ptx.Dispose();
-                    Response.Redirect("U.aspx");
+                    Response.Redirect("U8.aspx");
                 }
                 else if (string.IsNullOrEmpty(t.PLAYER10.ToString()))
                 {
@@ -295,37 +295,69 @@ namespace TeamBuilder.Divisions
                                   where t.NAME == teamname && t.DIVISION == _division
                                   select t).FirstOrDefault();
 
+                        var _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER1 select p).First();
+
                         switch (teammembernumber)
                         {
                             case 1:
-                                var _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER1 select p).First();
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER1 select p).First();
                                 _p.TEAMID = 1;
                                 _t.PLAYER1 = null;
                                 break;
                             case 2:
-                                var _p2 = (from p in ttx.PLAYERs where p.ID == _t.PLAYER2 select p).First();
-                                _p2.TEAMID = 1;
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER2 select p).First();
+                                _p.TEAMID = 1;
                                 _t.PLAYER2 = null;
                                 break;
                             case 3:
-                                var _p3 = (from p in ttx.PLAYERs where p.ID == _t.PLAYER3 select p).First();
-                                _p3.TEAMID = 1;
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER3 select p).First();
+                                _p.TEAMID = 1;
                                 _t.PLAYER3 = null;
                                 break;
                             case 4:
-                                var _p4 = (from p in ttx.PLAYERs where p.ID == _t.PLAYER4 select p).First();
-                                _p4.TEAMID = 1;
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER4 select p).First();
+                                _p.TEAMID = 1;
                                 _t.PLAYER4 = null;
                                 break;
                             case 5:
-                                var _p5 = (from p in ttx.PLAYERs where p.ID == _t.PLAYER5 select p).First();
-                                _p5.TEAMID = 1;
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER5 select p).First();
+                                _p.TEAMID = 1;
                                 _t.PLAYER5 = null;
                                 break;
                             case 6:
-                                var _p6 = (from p in ttx.PLAYERs where p.ID == _t.PLAYER6 select p).First();
-                                _p6.TEAMID = 1;
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER6 select p).First();
+                                _p.TEAMID = 1;
                                 _t.PLAYER6 = null;
+                                break;
+                            case 7:
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER7 select p).First();
+                                _p.TEAMID = 1;
+                                _t.PLAYER7 = null;
+                                break;
+                            case 8:
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER8 select p).First();
+                                _p.TEAMID = 1;
+                                _t.PLAYER8 = null;
+                                break;
+                            case 9:
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER9 select p).First();
+                                _p.TEAMID = 1;
+                                _t.PLAYER9 = null;
+                                break;
+                            case 10:
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER10 select p).First();
+                                _p.TEAMID = 1;
+                                _t.PLAYER10 = null;
+                                break;
+                            case 11:
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER11 select p).First();
+                                _p.TEAMID = 1;
+                                _t.PLAYER11 = null;
+                                break;
+                            case 12:
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER12 select p).First();
+                                _p.TEAMID = 1;
+                                _t.PLAYER12 = null;
                                 break;
                         }
                         ttx.SaveChanges();

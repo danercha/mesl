@@ -37,6 +37,14 @@ namespace TeamBuilder.DAL
         public Nullable<int> PLAYER10 { get; set; }
         public Nullable<int> PLAYER11 { get; set; }
         public Nullable<int> PLAYER12 { get; set; }
+        public Nullable<int> PLAYER13 { get; set; }
+        public Nullable<int> PLAYER14 { get; set; }
+        public Nullable<int> PLAYER15 { get; set; }
+        public Nullable<int> PLAYER16 { get; set; }
+        public Nullable<int> PLAYER17 { get; set; }
+        public Nullable<int> PLAYER18 { get; set; }
+        public Nullable<int> PLAYER19 { get; set; }
+        public Nullable<int> PLAYER20 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<COACH> COACHes { get; set; }

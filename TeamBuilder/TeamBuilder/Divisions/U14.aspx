@@ -135,7 +135,7 @@
             <div id="team" class="tab-pane fade">
                 <div class="table-responsive">
                     <table class="table">
-                        <asp:Repeater runat="server" ID="rptTeams" OnItemCommand="rptTeams_ItemCommand">
+                         <asp:Repeater runat="server" ID="rptTeams" OnItemCommand="rptTeams_ItemCommand">
                             <ItemTemplate>
                                 <tr>
                                     <td>
@@ -177,6 +177,54 @@
                                             <div class="row">
                                                 <h5><%# Eval("PLAYER6") %>
                                                     <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER6").ToString()) %>' runat="server" ID="LinkButton5" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_6" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                            </div>
+                                            <div class="row">
+                                                <h5><%# Eval("PLAYER7") %>
+                                                    <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER7").ToString()) %>' runat="server" ID="LinkButton11" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_6" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                            </div>
+                                            <div class="row">
+                                                <h5><%# Eval("PLAYER8") %>
+                                                    <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER8").ToString()) %>' runat="server" ID="LinkButton12" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_6" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                            </div>
+                                            <div class="row">
+                                                <h5><%# Eval("PLAYER9") %>
+                                                    <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER9").ToString()) %>' runat="server" ID="LinkButton13" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_6" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                            </div>
+                                            <div class="row">
+                                                <h5><%# Eval("PLAYER10") %>
+                                                    <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER10").ToString()) %>' runat="server" ID="LinkButton14" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_6" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                            </div>
+                                            <div class="row">
+                                                <h5><%# Eval("PLAYER11") %>
+                                                    <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER11").ToString()) %>' runat="server" ID="LinkButton15" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_6" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                            </div>
+                                            <div class="row">
+                                                <h5><%# Eval("PLAYER12") %>
+                                                    <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER12").ToString()) %>' runat="server" ID="LinkButton16" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_6" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                            </div>
+                                            <div class="row">
+                                                <h5><%# Eval("PLAYER13") %>
+                                                    <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER13").ToString()) %>' runat="server" ID="LinkButton23" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_13" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                            </div>
+                                            <div class="row">
+                                                <h5><%# Eval("PLAYER14") %>
+                                                    <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER14").ToString()) %>' runat="server" ID="LinkButton24" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_14" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                            </div>
+                                            <div class="row">
+                                                <h5><%# Eval("PLAYER15") %>
+                                                    <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER15").ToString()) %>' runat="server" ID="LinkButton25" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_15" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                            </div>
+                                            <div class="row">
+                                                <h5><%# Eval("PLAYER16") %>
+                                                    <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER16").ToString()) %>' runat="server" ID="LinkButton26" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_16" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                            </div>
+                                            <div class="row">
+                                                <h5><%# Eval("PLAYER17") %>
+                                                    <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER17").ToString()) %>' runat="server" ID="LinkButton27" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_17" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                            </div>
+                                            <div class="row">
+                                                <h5><%# Eval("PLAYER18") %>
+                                                    <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER18").ToString()) %>' runat="server" ID="LinkButton28" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_18" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
                                             </div>
                                         </div>
                                     </td>
@@ -221,6 +269,54 @@
                                         <div class="row">
                                             <h5><%# Eval("PLAYER6") %>
                                                 <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER6").ToString()) %>' runat="server" ID="LinkButton10" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_6" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                        </div>
+                                        <div class="row">
+                                            <h5><%# Eval("PLAYER7") %>
+                                                <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER7").ToString()) %>' runat="server" ID="LinkButton17" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_7" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                        </div>
+                                        <div class="row">
+                                            <h5><%# Eval("PLAYER8") %>
+                                                <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER8").ToString()) %>' runat="server" ID="LinkButton18" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_8" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                        </div>
+                                        <div class="row">
+                                            <h5><%# Eval("PLAYER9") %>
+                                                <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER9").ToString()) %>' runat="server" ID="LinkButton19" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_9" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                        </div>
+                                        <div class="row">
+                                            <h5><%# Eval("PLAYER10") %>
+                                                <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER10").ToString()) %>' runat="server" ID="LinkButton20" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_10" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                        </div>
+                                        <div class="row">
+                                            <h5><%# Eval("PLAYER11") %>
+                                                <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER11").ToString()) %>' runat="server" ID="LinkButton21" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_11" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                        </div>
+                                        <div class="row">
+                                            <h5><%# Eval("PLAYER12") %>
+                                                <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER12").ToString()) %>' runat="server" ID="LinkButton22" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_12" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                        </div>
+                                        <div class="row">
+                                            <h5><%# Eval("PLAYER13") %>
+                                                <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER13").ToString()) %>' runat="server" ID="LinkButton23" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_13" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                        </div>
+                                        <div class="row">
+                                            <h5><%# Eval("PLAYER14") %>
+                                                <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER14").ToString()) %>' runat="server" ID="LinkButton24" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_14" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                        </div>
+                                        <div class="row">
+                                            <h5><%# Eval("PLAYER15") %>
+                                                <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER15").ToString()) %>' runat="server" ID="LinkButton25" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_15" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                        </div>
+                                        <div class="row">
+                                            <h5><%# Eval("PLAYER16") %>
+                                                <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER16").ToString()) %>' runat="server" ID="LinkButton26" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_16" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                        </div>
+                                        <div class="row">
+                                            <h5><%# Eval("PLAYER17") %>
+                                                <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER17").ToString()) %>' runat="server" ID="LinkButton27" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_17" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
+                                        </div>
+                                        <div class="row">
+                                            <h5><%# Eval("PLAYER18") %>
+                                                <asp:LinkButton Visible='<%# !String.IsNullOrEmpty(Eval("PLAYER18").ToString()) %>' runat="server" ID="LinkButton28" CommandName="Delete" CommandArgument='<%# Eval("NAME") + "_18" %>' OnClientClick="if (!confirm('Are you sure do you want to delelte it?')) return false;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></asp:LinkButton></h5>
                                         </div>
                                     </div>
                                 </td>

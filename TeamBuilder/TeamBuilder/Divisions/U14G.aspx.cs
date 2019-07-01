@@ -91,6 +91,18 @@ namespace TeamBuilder.Divisions
                             PLAYER4 = (!string.IsNullOrEmpty(_t.PLAYER4.ToString())) ? (((from p in _players where p.ID == _t.PLAYER4 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER4 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER4 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER4 select p).First().AGE.ToString("#.##") + " ]" : "",
                             PLAYER5 = (!string.IsNullOrEmpty(_t.PLAYER5.ToString())) ? (((from p in _players where p.ID == _t.PLAYER5 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER5 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER5 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER5 select p).First().AGE.ToString("#.##") + " ]" : "",
                             PLAYER6 = (!string.IsNullOrEmpty(_t.PLAYER6.ToString())) ? (((from p in _players where p.ID == _t.PLAYER6 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER6 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER6 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER6 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER7 = (!string.IsNullOrEmpty(_t.PLAYER7.ToString())) ? (((from p in _players where p.ID == _t.PLAYER7 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER7 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER7 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER7 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER8 = (!string.IsNullOrEmpty(_t.PLAYER8.ToString())) ? (((from p in _players where p.ID == _t.PLAYER8 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER8 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER8 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER8 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER9 = (!string.IsNullOrEmpty(_t.PLAYER9.ToString())) ? (((from p in _players where p.ID == _t.PLAYER9 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER9 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER9 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER9 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER10 = (!string.IsNullOrEmpty(_t.PLAYER10.ToString())) ? (((from p in _players where p.ID == _t.PLAYER10 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER10 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER10 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER10 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER11 = (!string.IsNullOrEmpty(_t.PLAYER11.ToString())) ? (((from p in _players where p.ID == _t.PLAYER11 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER11 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER11 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER11 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER12 = (!string.IsNullOrEmpty(_t.PLAYER12.ToString())) ? (((from p in _players where p.ID == _t.PLAYER12 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER12 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER12 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER12 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER13 = (!string.IsNullOrEmpty(_t.PLAYER13.ToString())) ? (((from p in _players where p.ID == _t.PLAYER13 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER13 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER13 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER13 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER14 = (!string.IsNullOrEmpty(_t.PLAYER14.ToString())) ? (((from p in _players where p.ID == _t.PLAYER14 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER14 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER14 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER14 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER15 = (!string.IsNullOrEmpty(_t.PLAYER15.ToString())) ? (((from p in _players where p.ID == _t.PLAYER15 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER15 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER15 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER15 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER16 = (!string.IsNullOrEmpty(_t.PLAYER16.ToString())) ? (((from p in _players where p.ID == _t.PLAYER16 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER16 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER16 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER16 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER17 = (!string.IsNullOrEmpty(_t.PLAYER17.ToString())) ? (((from p in _players where p.ID == _t.PLAYER17 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER17 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER17 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER17 select p).First().AGE.ToString("#.##") + " ]" : "",
+                            PLAYER18 = (!string.IsNullOrEmpty(_t.PLAYER18.ToString())) ? (((from p in _players where p.ID == _t.PLAYER18 select p).First().GENDER == true) ? "(m)" : "(f)") + " " + (from p in _players where p.ID == _t.PLAYER18 select p).First().FNAME.Trim() + " " + (from p in _players where p.ID == _t.PLAYER18 select p).First().LNAME.Trim() + " [ " + (from p in _players where p.ID == _t.PLAYER18 select p).First().AGE.ToString("#.##") + " ]" : "",
                             AGE = (_age.Count() > 0) ? _age.Average() : 0,
                             GENDER = gendersum * 100
 
@@ -159,7 +171,7 @@ namespace TeamBuilder.Divisions
                     p.TEAMID = teamid;
                     ptx.SaveChanges();
                     ptx.Dispose();
-                    Response.Redirect("U6.aspx");
+                    Response.Redirect("U14G.aspx");
                 }
                 else if (string.IsNullOrEmpty(t.PLAYER2.ToString()))
                 {
@@ -167,7 +179,7 @@ namespace TeamBuilder.Divisions
                     p.TEAMID = teamid;
                     ptx.SaveChanges();
                     ptx.Dispose();
-                    Response.Redirect("U6.aspx");
+                    Response.Redirect("U14G.aspx");
                 }
                 else if (string.IsNullOrEmpty(t.PLAYER3.ToString()))
                 {
@@ -175,7 +187,7 @@ namespace TeamBuilder.Divisions
                     p.TEAMID = teamid;
                     ptx.SaveChanges();
                     ptx.Dispose();
-                    Response.Redirect("U6.aspx");
+                    Response.Redirect("U14G.aspx");
                 }
                 else if (string.IsNullOrEmpty(t.PLAYER4.ToString()))
                 {
@@ -183,7 +195,7 @@ namespace TeamBuilder.Divisions
                     p.TEAMID = teamid;
                     ptx.SaveChanges();
                     ptx.Dispose();
-                    Response.Redirect("U6.aspx");
+                    Response.Redirect("U14G.aspx");
                 }
                 else if (string.IsNullOrEmpty(t.PLAYER5.ToString()))
                 {
@@ -191,7 +203,7 @@ namespace TeamBuilder.Divisions
                     p.TEAMID = teamid;
                     ptx.SaveChanges();
                     ptx.Dispose();
-                    Response.Redirect("U6.aspx");
+                    Response.Redirect("U14G.aspx");
                 }
                 else if (string.IsNullOrEmpty(t.PLAYER6.ToString()))
                 {
@@ -199,7 +211,103 @@ namespace TeamBuilder.Divisions
                     p.TEAMID = teamid;
                     ptx.SaveChanges();
                     ptx.Dispose();
-                    Response.Redirect("U6.aspx");
+                    Response.Redirect("U14G.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER7.ToString()))
+                {
+                    t.PLAYER7 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("U14G.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER8.ToString()))
+                {
+                    t.PLAYER8 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("U14G.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER9.ToString()))
+                {
+                    t.PLAYER9 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("U14G.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER10.ToString()))
+                {
+                    t.PLAYER10 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("U14G.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER11.ToString()))
+                {
+                    t.PLAYER11 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("U14G.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER12.ToString()))
+                {
+                    t.PLAYER12 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("U14G.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER13.ToString()))
+                {
+                    t.PLAYER13 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("U14G.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER14.ToString()))
+                {
+                    t.PLAYER14 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("U14G.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER15.ToString()))
+                {
+                    t.PLAYER15 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("U14G.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER16.ToString()))
+                {
+                    t.PLAYER16 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("U14G.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER17.ToString()))
+                {
+                    t.PLAYER17 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("U14G.aspx");
+                }
+                else if (string.IsNullOrEmpty(t.PLAYER18.ToString()))
+                {
+                    t.PLAYER18 = playerid;
+                    p.TEAMID = teamid;
+                    ptx.SaveChanges();
+                    ptx.Dispose();
+                    Response.Redirect("U14G.aspx");
                 }
                 else
                 {
@@ -241,37 +349,99 @@ namespace TeamBuilder.Divisions
                                   where t.NAME == teamname && t.DIVISION == _division
                                   select t).FirstOrDefault();
 
+                        var _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER1 select p).First();
+
                         switch (teammembernumber)
                         {
                             case 1:
-                                var _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER1 select p).First();
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER1 select p).First();
                                 _p.TEAMID = 1;
                                 _t.PLAYER1 = null;
                                 break;
                             case 2:
-                                var _p2 = (from p in ttx.PLAYERs where p.ID == _t.PLAYER2 select p).First();
-                                _p2.TEAMID = 1;
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER2 select p).First();
+                                _p.TEAMID = 1;
                                 _t.PLAYER2 = null;
                                 break;
                             case 3:
-                                var _p3 = (from p in ttx.PLAYERs where p.ID == _t.PLAYER3 select p).First();
-                                _p3.TEAMID = 1;
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER3 select p).First();
+                                _p.TEAMID = 1;
                                 _t.PLAYER3 = null;
                                 break;
                             case 4:
-                                var _p4 = (from p in ttx.PLAYERs where p.ID == _t.PLAYER4 select p).First();
-                                _p4.TEAMID = 1;
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER4 select p).First();
+                                _p.TEAMID = 1;
                                 _t.PLAYER4 = null;
                                 break;
                             case 5:
-                                var _p5 = (from p in ttx.PLAYERs where p.ID == _t.PLAYER5 select p).First();
-                                _p5.TEAMID = 1;
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER5 select p).First();
+                                _p.TEAMID = 1;
                                 _t.PLAYER5 = null;
                                 break;
                             case 6:
-                                var _p6 = (from p in ttx.PLAYERs where p.ID == _t.PLAYER6 select p).First();
-                                _p6.TEAMID = 1;
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER6 select p).First();
+                                _p.TEAMID = 1;
                                 _t.PLAYER6 = null;
+                                break;
+                            case 7:
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER7 select p).First();
+                                _p.TEAMID = 1;
+                                _t.PLAYER7 = null;
+                                break;
+                            case 8:
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER8 select p).First();
+                                _p.TEAMID = 1;
+                                _t.PLAYER8 = null;
+                                break;
+                            case 9:
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER9 select p).First();
+                                _p.TEAMID = 1;
+                                _t.PLAYER9 = null;
+                                break;
+                            case 10:
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER10 select p).First();
+                                _p.TEAMID = 1;
+                                _t.PLAYER10 = null;
+                                break;
+                            case 11:
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER11 select p).First();
+                                _p.TEAMID = 1;
+                                _t.PLAYER11 = null;
+                                break;
+                            case 12:
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER12 select p).First();
+                                _p.TEAMID = 1;
+                                _t.PLAYER12 = null;
+                                break;
+                            case 13:
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER13 select p).First();
+                                _p.TEAMID = 1;
+                                _t.PLAYER13 = null;
+                                break;
+                            case 14:
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER14 select p).First();
+                                _p.TEAMID = 1;
+                                _t.PLAYER14 = null;
+                                break;
+                            case 15:
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER15 select p).First();
+                                _p.TEAMID = 1;
+                                _t.PLAYER15 = null;
+                                break;
+                            case 16:
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER16 select p).First();
+                                _p.TEAMID = 1;
+                                _t.PLAYER16 = null;
+                                break;
+                            case 17:
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER17 select p).First();
+                                _p.TEAMID = 1;
+                                _t.PLAYER17 = null;
+                                break;
+                            case 18:
+                                _p = (from p in ttx.PLAYERs where p.ID == _t.PLAYER18 select p).First();
+                                _p.TEAMID = 1;
+                                _t.PLAYER18 = null;
                                 break;
                         }
                         ttx.SaveChanges();
@@ -279,7 +449,7 @@ namespace TeamBuilder.Divisions
 
                     break;
             }
-            Response.Redirect("U6.aspx");
+            Response.Redirect("U14G.aspx");
         }
     }
 }

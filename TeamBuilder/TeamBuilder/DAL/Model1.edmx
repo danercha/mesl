@@ -59,6 +59,14 @@
           <Property Name="PLAYER10" Type="int" />
           <Property Name="PLAYER11" Type="int" />
           <Property Name="PLAYER12" Type="int" />
+          <Property Name="PLAYER13" Type="int" />
+          <Property Name="PLAYER14" Type="int" />
+          <Property Name="PLAYER15" Type="int" />
+          <Property Name="PLAYER16" Type="int" />
+          <Property Name="PLAYER17" Type="int" />
+          <Property Name="PLAYER18" Type="int" />
+          <Property Name="PLAYER19" Type="int" />
+          <Property Name="PLAYER20" Type="int" />
         </EntityType>
         <Association Name="FK_ASSISTANT_TEAM">
           <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1">
@@ -173,6 +181,14 @@
           <Property Name="PLAYER10" Type="Int32" />
           <Property Name="PLAYER11" Type="Int32" />
           <Property Name="PLAYER12" Type="Int32" />
+          <Property Name="PLAYER13" Type="Int32" />
+          <Property Name="PLAYER14" Type="Int32" />
+          <Property Name="PLAYER15" Type="Int32" />
+          <Property Name="PLAYER16" Type="Int32" />
+          <Property Name="PLAYER17" Type="Int32" />
+          <Property Name="PLAYER18" Type="Int32" />
+          <Property Name="PLAYER19" Type="Int32" />
+          <Property Name="PLAYER20" Type="Int32" />
         </EntityType>
         <Association Name="FK_COACH_TEAM">
           <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />
@@ -275,6 +291,14 @@
           <EntitySetMapping Name="TEAMs">
             <EntityTypeMapping TypeName="db5448bbf8bffc436783e8a649012e22ecModel.TEAM">
               <MappingFragment StoreEntitySet="TEAM">
+                <ScalarProperty Name="PLAYER20" ColumnName="PLAYER20" />
+                <ScalarProperty Name="PLAYER19" ColumnName="PLAYER19" />
+                <ScalarProperty Name="PLAYER18" ColumnName="PLAYER18" />
+                <ScalarProperty Name="PLAYER17" ColumnName="PLAYER17" />
+                <ScalarProperty Name="PLAYER16" ColumnName="PLAYER16" />
+                <ScalarProperty Name="PLAYER15" ColumnName="PLAYER15" />
+                <ScalarProperty Name="PLAYER14" ColumnName="PLAYER14" />
+                <ScalarProperty Name="PLAYER13" ColumnName="PLAYER13" />
                 <ScalarProperty Name="PLAYER12" ColumnName="PLAYER12" />
                 <ScalarProperty Name="PLAYER11" ColumnName="PLAYER11" />
                 <ScalarProperty Name="PLAYER10" ColumnName="PLAYER10" />
