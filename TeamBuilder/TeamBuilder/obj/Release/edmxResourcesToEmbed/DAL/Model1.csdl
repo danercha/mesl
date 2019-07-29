@@ -49,6 +49,14 @@
     <Property Name="PLAYER10" Type="Int32" />
     <Property Name="PLAYER11" Type="Int32" />
     <Property Name="PLAYER12" Type="Int32" />
+    <Property Name="PLAYER13" Type="Int32" />
+    <Property Name="PLAYER14" Type="Int32" />
+    <Property Name="PLAYER15" Type="Int32" />
+    <Property Name="PLAYER16" Type="Int32" />
+    <Property Name="PLAYER17" Type="Int32" />
+    <Property Name="PLAYER18" Type="Int32" />
+    <Property Name="PLAYER19" Type="Int32" />
+    <Property Name="PLAYER20" Type="Int32" />
   </EntityType>
   <Association Name="FK_COACH_TEAM">
     <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1" />

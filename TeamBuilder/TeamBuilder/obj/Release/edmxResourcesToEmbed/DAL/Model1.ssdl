@@ -54,6 +54,14 @@
     <Property Name="PLAYER10" Type="int" />
     <Property Name="PLAYER11" Type="int" />
     <Property Name="PLAYER12" Type="int" />
+    <Property Name="PLAYER13" Type="int" />
+    <Property Name="PLAYER14" Type="int" />
+    <Property Name="PLAYER15" Type="int" />
+    <Property Name="PLAYER16" Type="int" />
+    <Property Name="PLAYER17" Type="int" />
+    <Property Name="PLAYER18" Type="int" />
+    <Property Name="PLAYER19" Type="int" />
+    <Property Name="PLAYER20" Type="int" />
   </EntityType>
   <Association Name="FK_ASSISTANT_TEAM">
     <End Role="TEAM" Type="Self.TEAM" Multiplicity="0..1">

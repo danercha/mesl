@@ -104,4 +104,3 @@ D:\MESL\Teams\TeamBuilder\TeamBuilder\obj\Release\TeamBuilder.csproj.CoreCompile
 D:\MESL\Teams\TeamBuilder\TeamBuilder\obj\Release\TeamBuilder.csproj.CopyComplete
 D:\MESL\Teams\TeamBuilder\TeamBuilder\obj\Release\TeamBuilder.dll
 D:\MESL\Teams\TeamBuilder\TeamBuilder\obj\Release\TeamBuilder.pdb
-D:\MESL\Teams\TeamBuilder\TeamBuilder\obj\Release\TeamBuilder.csprojAssemblyReference.cache

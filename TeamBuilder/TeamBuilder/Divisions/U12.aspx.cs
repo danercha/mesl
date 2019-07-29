@@ -126,7 +126,7 @@ namespace TeamBuilder.Divisions
                     rptTeams.DataBind();
 
                     rptCoaches.DataSource = _coaches;
-                    rptCoaches.DataBind(); 
+                    rptCoaches.DataBind();
 
 
                 }
