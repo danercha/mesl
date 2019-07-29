@@ -114,7 +114,7 @@ namespace TeamBuilder.Divisions
                         _coaches.Add(_c);
                     }
 
-                    rptPlayer.DataSource = _players.Where(x => x.TEAMID == 1);
+                    rptPlayer.DataSource = _players.Where(x => x.TEAMID == 1); 
                     rptPlayer.DataBind();
                     lblPlayerCount.Text = "[ " + _players.Where(x => x.TEAMID == 1).Count().ToString() + " ]";
 
